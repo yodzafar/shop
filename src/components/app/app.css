@@ -1,0 +1,75 @@
+a:hover {
+    text-decoration: none
+}
+
+
+.app {
+    padding-top: 30px;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.thumbnail {
+    margin-bottom: 10px;
+}
+
+.caption {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.list-item {
+    padding: 15px;
+    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    transition: .3s ease;
+}
+
+.list-item:hover{
+    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.25);
+}
+
+.list-price {
+    margin-left: auto;
+    font-weight: 800;
+}
+
+.list-title {
+    display: inline-block;
+    font-weight: 600;
+}
+
+.desc {
+    font-size: 15px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.more-link {
+    padding: 6px 12px;
+    border: 1px solid #d3d3d3;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+
