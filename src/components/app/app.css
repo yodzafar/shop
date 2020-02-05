@@ -123,6 +123,9 @@ img {
     flex-wrap: nowrap;
 }
 
+.from-wrapper{
+    margin-bottom: 15px;
+}
 
 .from-wrapper .form-control{
     border-bottom-right-radius: 0;
