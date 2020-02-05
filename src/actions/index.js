@@ -9,13 +9,17 @@ import {
   FETCH_PHONE_BY_ID_SUCCESS,
   FETCH_PHONE_BY_ID_FAILURE,
   ADD_PHONE_TO_BASKET,
-  SEARCH_PHONE
+  SEARCH_PHONE,
+  FETCH_CATEGORIES_START,
+  FETCH_CATEGORIES_SUCCESS,
+  FETCH_CATEGORIES_FAILURE
 } from "../constants/actionTypes";
 
 import {
   fetchPhones as fetchPhonesApi,
   loadMorePhones as loadMorePhonesApi,
-  fetchPhoneById as fetchPhoneByIdApi
+  fetchPhoneById as fetchPhoneByIdApi,
+  fetchCategories as fetchCategoriesApi
 } from "../api";
 import {getRenderedPhonesLength} from "../selectors";
 
@@ -86,4 +90,22 @@ export const searchPhone = text => dispatch => {
     type: SEARCH_PHONE,
     payload: text
   })
+};
+
+
+export const fetchCategories = () => async dispatch => {
+  dispatch({type: FETCH_CATEGORIES_START});
+  try {
+    const phones = await fetchCategoriesApi();
+    dispatch({
+      type: FETCH_CATEGORIES_SUCCESS,
+      payload: phones
+    })
+  } catch (err) {
+    dispatch({
+      type: FETCH_CATEGORIES_FAILURE,
+      payload: err,
+      error: true
+    })
+  }
 };

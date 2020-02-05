@@ -4,12 +4,18 @@ import * as R from 'ramda'
 import {Link} from 'react-router-dom'
 
 import {BaseLayout} from "../../components/layout";
-import {fetchPhones, loadMorePhones, addPhoneToBasket} from "../../actions";
+import {
+  fetchPhones,
+  loadMorePhones,
+  addPhoneToBasket,
+  fetchCategories
+} from "../../actions";
 import {getPhones} from '../../selectors'
 
 class PhonesContainer extends Component {
   componentDidMount() {
-    this.props.fetchPhones()
+    this.props.fetchPhones();
+    this.props.fetchCategories();
   }
 
   renderPhone = (phone, index) => {
@@ -63,11 +69,12 @@ class PhonesContainer extends Component {
 const mapDispatchToProps = {
   fetchPhones,
   loadMorePhones,
-  addPhoneToBasket
+  addPhoneToBasket,
+  fetchCategories
 };
 
-const mapStateToProps = state => ({
-  phones: getPhones(state)
+const mapStateToProps = (state, ownProps) => ({
+  phones: getPhones(state, ownProps)
 });
 
 export const Phones = BaseLayout(connect(mapStateToProps, mapDispatchToProps)(PhonesContainer));

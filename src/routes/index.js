@@ -7,6 +7,7 @@ import {Phone} from "../containers/phone";
 export const routes = (
     <Switch>
       <Route path='/' exact component={Phones} />
+      <Route path='/categories/:id' component={Phones} />
       <Route path='/phones/:id' component={Phone} />
     </Switch>
 )

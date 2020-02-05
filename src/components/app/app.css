@@ -144,3 +144,14 @@ img {
 .search-btn:focus{
     box-shadow: unset;
 }
+
+.sidebar-title{
+    font-weight: 100;
+    font-size: 20px;
+    text-align: center;
+}
+
+.category-item{
+    padding: 8px 15px;
+    color: #222;
+}

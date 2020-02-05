@@ -16,7 +16,6 @@ const Cart = ({totalBasketCount, totalPrice}) => (
 );
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     totalBasketCount: getTotalBasketCount(state),
     totalPrice: getTotalBasketPrice(state)

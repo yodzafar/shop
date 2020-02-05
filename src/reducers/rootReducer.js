@@ -4,6 +4,7 @@ import {connectRouter} from "connected-react-router";
 import {phonesPage} from "./phonesPage";
 import {phonePage} from "./phonePage";
 import {basket} from "./basket";
+import {categories} from "./categories";
 
 
 export default history => combineReducers({
@@ -11,5 +12,6 @@ export default history => combineReducers({
   router: connectRouter(history),
   phonesPage: phonesPage,
   phonePage: phonePage,
-  basket: basket
+  basket: basket,
+  categories:categories
 })
