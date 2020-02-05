@@ -1,17 +1,29 @@
 import React from "react";
-import {routes} from "../../routes";
+import {Sidebar} from "../sidebar";
 
-export const Layout = () => (
-    <div className='app'>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-md-3'>
-            sidebar
+export const BaseLayout = (Component) => {
+  return function (props) {
+    return (
+          <div className='container'>
+            <div className='row'>
+              <div className='col-md-3'>
+                <Sidebar/>
+              </div>
+              <div className='col-md-9'>
+                <Component {...props}/>
+              </div>
+            </div>
           </div>
-          <div className='col-md-9'>
-            {routes}
-          </div>
+    )
+  }
+};
+
+export const PageLayout = (Component) => {
+  return function (props) {
+    return (
+        <div className='container'>
+          <Component {...props}/>
         </div>
-      </div>
-    </div>
-);
+    )
+  }
+};

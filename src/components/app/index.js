@@ -1,11 +1,12 @@
 import React from "react";
-
-import {Layout} from "../layout";
+import {routes} from "../../routes";
 
 import './app.css'
 
 export const App = () => {
   return(
-      <Layout/>
+      <div className='app'>
+        {routes}
+      </div>
   )
 };
